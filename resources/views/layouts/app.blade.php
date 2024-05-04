@@ -20,16 +20,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
-                </li>
+            <li class="nav-item">
+                <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
+                    @csrf
+                    @method('DELETE')
+                        <button class="nav-link btn btn-danger" type="submit">Logout</button>
+                </form>
+            </li>
             </ul>
         </div>
     </div>
 </nav>
 
 <div class="container mt-4">
-    <!-- @yield('content') is used to display the content of the current view -->
+   
     @yield('content') 
 </div>
 
